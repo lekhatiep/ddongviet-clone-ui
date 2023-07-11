@@ -1,0 +1,9 @@
+.page-header {
+    background-color: rgb(190 30 45);
+    border-bottom: 1px solid #ccc;
+}
+
+.text-10{
+    font-size: 10px;
+    line-height: 16px;
+}

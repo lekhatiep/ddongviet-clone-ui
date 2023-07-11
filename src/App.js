@@ -6,12 +6,17 @@ import Mobile from './pages/Mobile';
 import Laptop from './pages/Laptop';
 import Apple from './pages/Apple';
 import Dell from './pages/Dell';
+import Header from './components/Header/Header';
+
+
 
 
 function App() {
   return (
     <>
+
       <Router>
+       <Header/>
         <Routes>
           <Route path='/' element={<Home/>}></Route>
           <Route path='/lap-top' element={<Laptop/>}></Route>
