@@ -4,14 +4,14 @@ import "./Header.css";
 export default function Header() {
   return (
     <div>
- <div class="w-full overflow-hidden max-md:hidden h-[44px] min-w-[100vh]">
-    <div id="topBanner" class="flex h-full w-full items-center justify-center overflow-hidden bg-[#cd131d]" >
-        <a href="/" class="item-center container flex w-full justify-center overflow-hidden">
+ <div className="w-full overflow-hidden max-md:hidden h-[44px] min-w-[100vh]">
+    <div id="topBanner" className="flex h-full w-full items-center justify-center overflow-hidden bg-[#cd131d]" >
+        <a href="/" className="item-center container flex w-full justify-center overflow-hidden">
             <img src="https://cdn-v2.didongviet.vn/files/banners/2023/5/21/1/1687323167073_artboard_1.jpg" alt="DDV"/>
             </a>
             </div>
             </div>
-      <header className="page-header flex items-center px-3 w-full mx-auto">
+      <header className="page-header flex items-center w-full mx-auto">
         <div className="max-w-6xl mx-auto flex items-center justify-between max-md:justify-between max-md:grid-cols-8 w-full max-md:grid md:gap-8 max-md:h-[60px] py-2">
           <div className="md:w-1/5">
             <img
@@ -59,7 +59,7 @@ export default function Header() {
           </div>
           <div className="md:w-3/6">
             <ul className="flex space-x-1 items-center">
-              <li className="w-1/6">
+              <li className="w-2/6">
                 <a href="/" className="flex">
                   <img
                     src="https://didongviet.vn/svg/Header/phone.svg"
@@ -98,7 +98,7 @@ export default function Header() {
                   <span className="text-white text-sm pl-1">Giỏ hàng</span>
                 </a>
               </li>
-              <li className="flex">
+              <li className="flex w-2/6">
                 <img src="https://didongviet.vn/svg/Header/user.svg" alt="" />
                 <p className="flex flex-col pl-1">
                   <a href="/" className="text-sm text-white hover:underline">Đăng nhập</a>
