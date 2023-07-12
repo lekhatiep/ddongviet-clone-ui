@@ -13,8 +13,8 @@ import Header from './components/Header/Header';
 
 function App() {
   return (
-    <>
-
+    <div className='relative bg-[#f2f2f2]'>
+  
       <Router>
        <Header/>
         <Routes>
@@ -25,7 +25,7 @@ function App() {
           <Route path='/dell' element={<Dell/>}></Route>
         </Routes>      
       </Router>
-    </>
+    </div>
   );
 }
 
