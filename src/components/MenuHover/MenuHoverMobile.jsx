@@ -4,7 +4,7 @@ export default function MenuHover({handleMouseOver}) {
   
   return (
     <div onMouseLeave={handleMouseOver}
-      className="absolute inset-y-2 z-50 w-2/3 overflow-hidden rounded bg-transparent text-gray-700 group-hover:block top-0 "
+      className="absolute inset-y-2 z-50 w-2/3 overflow-hidden rounded bg-transparent text-gray-700 group-hover:block top-0 hide child"
       style={{ height: "410px", zIndex: 99, left: "0px", width: "100%" }}
     >
       <div className="container grid h-full w-full grid-cols-4 items-start justify-between gap-4 bg-white ">
