@@ -1,0 +1,7 @@
+.group:hover .child {
+    display: block;
+}
+
+.child {
+    display: none;
+  }
