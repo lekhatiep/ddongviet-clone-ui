@@ -29,12 +29,12 @@ export default function Slider() {
             <SwiperSlide key={index}>
               <a
                 href="/"
-                className="h-[410px] w-full overflow-hidden rounded max-md:h-[189px] relative "
+                className=" w-full overflow-hidden rounded relative min-h-full"
               >
                 <img
                   src={val}
-                  alt="Gian hàng xả kho phụ kiện"
-                  className="md:object-cover max-md:object-fill"
+                  alt=""
+                  className="md:object-cover max-md:object-fill h-full"
                 />
               </a>
             </SwiperSlide>

@@ -2,9 +2,7 @@ import React from "react";
 
 export default function MenHoverLaptop({ handleMouseOver, onMouseOver, innerRef}) {
   return (
-    <div
-      className="absolute inset-y-2 z-50 w-2/3 overflow-hidden rounded bg-transparent text-gray-700 group-hover:block top-0 hidden child"
-      style={{ height: "410px", zIndex: 99, left: "0px", width: "100%" }}
+    <
     >
       <div className="container grid h-full w-full grid-cols-4 items-start justify-between gap-4 bg-white ">
         <div className="col-span-1 my-2 h-full flex-col border-r px-2">
@@ -166,6 +164,6 @@ export default function MenHoverLaptop({ handleMouseOver, onMouseOver, innerRef}
           </a>
         </div>
       </div>
-    </div>
+    </>
   );
 }

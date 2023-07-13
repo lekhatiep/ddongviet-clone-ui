@@ -19,10 +19,10 @@ function App() {
        <Header/>
         <Routes>
           <Route path='/' element={<Home/>}></Route>
-          <Route path='/lap-top' element={<Laptop/>}></Route>
-          <Route path='/mobile' element={<Mobile/>}></Route>
-          <Route path='/apple' element={<Apple/>}></Route>
-          <Route path='/dell' element={<Dell/>}></Route>
+          <Route path='/apple-macbook-imac' element={<Laptop/>}></Route>
+          <Route path='/xiaomi' element={<Mobile/>}></Route>
+          <Route path='/dien-thoai-iphone' element={<Apple/>}></Route>
+          <Route path='/macbook-pro' element={<Dell/>}></Route>
         </Routes>      
       </Router>
     </div>
