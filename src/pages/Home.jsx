@@ -4,77 +4,81 @@ import MenuHoverMobile from "../components/MenuHover/MenuHoverMobile";
 import MenuHoverApple from "../components/MenuHover/MenuHoverApple";
 import MenuHoverLaptop from "../components/MenuHover/MenuHoverLaptop";
 import Slider from "../components/Slider/Slider";
+import ItemAds from "../components/ItemAds/ItemAds";
+import WrapSubmenu from "../components/MenuHover/WrapSubmenu";
 
-import { Menu, createStyles } from "@mantine/core";
+//css
 import "../assets/css/Home.css";
-const useStyles = createStyles((theme) => ({
-  dropdown: {
-    backgroundColor: "red",
-
-    padding: "0px",
-  },
-}));
 
 export default function Home() {
+  const [menuName, setMenuName] = useState("");
+  const [showSubMenu, setShowSubMenu] = useState(false);
 
-  const [isShowMenuHoverMobile, setIsShowMenuHoverMobile] = useState(false);
-  const [isShowMenuHoverApple, setIsShowMenuHoverApple] = useState(false);
-  const [isShowMenuHoverLaptop, setIsShowMenuHoverLaptop] = useState(false);
+  const subMenuRef = useRef(null);
+
+  const listItemAds = [
+    {
+      href: "https://didongviet.vn/may-tinh-bang/ipad-gen-9-64gb-wifi.html",
+      src: "https://cdn-v2.didongviet.vn/files/banners/2023/6/10/1/1688947116995_right_5790k.png",
+      alt: "",
+    },
+    {
+      href: "https://didongviet.vn/dien-thoai/samsung-galaxy-s23-ultra-5g-256gb-bhdt.html",
+      src: "https://cdn-v2.didongviet.vn/files/banners/2023/6/11/1/1689012053303_s23_ultra.jpg",
+    },
+    {
+      href: "https://didongviet.vn/dien-thoai/oppo-a57-4gb-128gb-bh13t.html",
+      src: "https://cdn-v2.didongviet.vn/files/banners/2023/6/8/1/1688779744492_398x252_5.jpg",
+    },
+  ];
 
   const handleMouseHover = (event) => {
-    const {name} = event.currentTarget;
-    setIsShowMenuHoverMobile(false);
-    setIsShowMenuHoverApple(false);
-    setIsShowMenuHoverLaptop(false);
-    console.log(event.currentTarget);
-    console.log("hover:"+name);
+    const { name } = event.currentTarget;
+    setShowSubMenu(true);
+
+    if (subMenuRef.current) {
+      subMenuRef.current.style.display = "block";
+    }
 
     if (name === "Mobile") {
-      setIsShowMenuHoverMobile(true);
+      setMenuName(name);
     }
     if (name === "Apple") {
-      setIsShowMenuHoverApple(true);
+      setMenuName(name);
     }
     if (name === "Laptop") {
-      setIsShowMenuHoverLaptop(true);
+      setMenuName(name);
     }
     if (name === "") {
-      setIsShowMenuHoverMobile(false);
-      setIsShowMenuHoverApple(false);
-      setIsShowMenuHoverLaptop(false);
+      setShowSubMenu(false);
     }
   };
 
   const handleMouseLeave = (name) => {
-    setIsShowMenuHoverMobile(false);
-    setIsShowMenuHoverApple(false);
-    setIsShowMenuHoverLaptop(false);
-
-    console.log("name" + name);
-    if (name === "Mobile") {
-      setIsShowMenuHoverMobile(true);
-    } else if (name === "Apple") {
-      setIsShowMenuHoverApple(true);
-    } else if (name === "Laptop") {
-      setIsShowMenuHoverLaptop(true);
+    if (subMenuRef.current) {
+      console.log(subMenuRef.current);
+      subMenuRef.current.style.display = "none";
     }
   };
+
   return (
     <>
       <main className="flex w-full flex-col justify-start items-center mx-auto">
         <div className="container w-full max-w-6xl">
-          <div className="group grid grid-cols-12 min-h-[410px] mt-1 gap-2">
-            <div className="col-span-2 max-md:hidden min-h-[410px] bg-white">
+          <div className="grid grid-cols-12 min-h-[410px] mt-1 gap-2" onMouseLeave={() => setShowSubMenu(false)}>
+            <div
+              className="col-span-2 max-md:hidden bg-white"
+               
+            >
               <div
                 name=""
-                className="rounded-lg bg-white p-1 flex flex-col justify-between min-h-[100px] "
-               
+                className="rounded-lg bg-white p-1 flex flex-col justify-between min-h-[100px]"
+              
               >
                 <Link
                   href="/"
                   name="Mobile"
-                  onMouseOver={handleMouseHover}
-                  onMouseLeave={() => handleMouseLeave("Mobile")}
+                  onMouseOver={(e) => handleMouseHover(e)}
                 >
                   <div className="h-[26px] flex cursor-pointer items-center justify-between">
                     <div className="flex items-center">
@@ -104,8 +108,7 @@ export default function Home() {
                 <Link
                   href="/"
                   name="Apple"
-                  onMouseOver={handleMouseHover}
-                  onMouseLeave={() => handleMouseLeave("Apple")}
+                  onMouseOver={(e) => handleMouseHover(e)}
                 >
                   <div className="h-[26px] flex cursor-pointer items-center justify-between">
                     <div className="flex items-center">
@@ -130,12 +133,7 @@ export default function Home() {
                     />
                   </div>
                 </Link>
-                <Link
-                  href="/"
-                  name="Laptop"
-                  onMouseOver={handleMouseHover}
-                  onMouseLeave={() => handleMouseLeave("Laptop")}
-                >
+                <Link href="/" name="Laptop" onMouseOver={handleMouseHover}>
                   <div className="h-[26px] flex cursor-pointer items-center justify-between">
                     <div className="flex items-center">
                       <div>
@@ -163,21 +161,25 @@ export default function Home() {
             </div>
             <div className="relative h-[410px] max-md:h-full max-md:w-full md:col-span-10">
               <div className="grid md:grid-cols-5">
-                <div className="bg-blue-400 w-full col-span-4">
-                  <Slider></Slider>
+                <div className="w-full col-span-4 min-h-[410px]">
+                   <Slider></Slider>
                 </div>
-                <div className="bg-red-400 col-span-1">Banner left</div>
+                <div className="col-span-1">
+                  {listItemAds.length > 0 &&
+                    listItemAds.map((val, i) => (
+                      <ItemAds key={i} data={val}></ItemAds>
+                    ))}
+                </div>
               </div>
-              {isShowMenuHoverMobile && <MenuHoverMobile />}
-              {isShowMenuHoverApple && <MenuHoverApple />}
-              {isShowMenuHoverLaptop && <MenuHoverLaptop />}
+
+              {showSubMenu && (
+                <WrapSubmenu myRef={subMenuRef}>
+                  {menuName === "Mobile" && <MenuHoverMobile />}
+                  {menuName === "Apple" && <MenuHoverApple />}
+                  {menuName === "Laptop" && <MenuHoverLaptop />}
+                </WrapSubmenu>
+              )}
             </div>
-          </div>
-        </div>
-        <div className="group">
-          Hover me
-          <div className="child">
-            This will be displayed when the parent is hovered
           </div>
         </div>
       </main>
