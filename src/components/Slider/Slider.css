@@ -54,3 +54,6 @@
 .swiper-button-prev:after {
     background-image: url("https://didongviet.vn/svg/statics/arrowleft.svg")!important;
 }
+.swiper-slide {
+    border-radius: 5px;
+}
