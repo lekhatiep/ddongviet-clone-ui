@@ -29,3 +29,20 @@ img, picture, video, canvas, svg {
 main {
   font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+.text-brown {
+  --tw-text-opacity: 1;
+  color: rgb(128 138 148/var(--tw-text-opacity));
+}
+
+.text-ddv {
+  --tw-text-opacity: 1;
+  color: rgb(190 30 45/var(--tw-text-opacity));
+}
+.bg-ddv {
+  --tw-bg-opacity: 1;
+  background-color: rgb(190 30 45/var(--tw-bg-opacity));
+}
+.border-ddv {
+  --tw-border-opacity: 1;
+  border-color: rgb(190 30 45/var(--tw-border-opacity));
+}

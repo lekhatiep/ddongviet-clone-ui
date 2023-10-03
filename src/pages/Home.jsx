@@ -11,10 +11,12 @@ import WrapSubmenu from "../components/MenuHover/WrapSubmenu";
 //css
 import "../assets/css/Home.css";
 import ItemHorizontal from "../components/ItemHorizontal/ItemHorizontal";
+import ItemProduct from "../components/Product/ItemProduct/ItemProduct";
 
 export default function Home() {
   const [menuName, setMenuName] = useState("");
   const [showSubMenu, setShowSubMenu] = useState(false);
+  //const [listItemProduct, setlistItemProduct] = useState([]);
 
   const subMenuRef = useRef(null);
 
@@ -36,67 +38,68 @@ export default function Home() {
 
   const listItemHorizontal = [
     {
-      href:"https://didongviet.vn/dien-thoai/iphone-15-pro-max.html",
-      src:"https://cdn-v2.didongviet.vn/files/page/2023/8/18/0/1695001713231_iphone_15_pro_max.png",
-      alt:"iPhone 15 Pro Max"
+      href: "https://didongviet.vn/dien-thoai/iphone-15-pro-max.html",
+      src: "https://cdn-v2.didongviet.vn/files/page/2023/8/18/0/1695001713231_iphone_15_pro_max.png",
+      alt: "iPhone 15 Pro Max",
     },
     {
-      href:"https://didongviet.vn/dien-thoai/samsung-galaxy-z-flip5-5g.html",
-      src:"https://cdn-v2.didongviet.vn/files/page/2023/7/15/0/1692080008025_frame_44.png",
-      alt:"Samsung Galaxy Z Flip5"
+      href: "https://didongviet.vn/dien-thoai/samsung-galaxy-z-flip5-5g.html",
+      src: "https://cdn-v2.didongviet.vn/files/page/2023/7/15/0/1692080008025_frame_44.png",
+      alt: "Samsung Galaxy Z Flip5",
     },
     {
-      href:"https://didongviet.vn/apple-macbook-imac/macbook-air-m1-2020.html",
-      src:"https://cdn-v2.didongviet.vn/files/page/2023/7/15/0/1692080217166_frame_32.png",
-      alt:"Macbook Air M1"
+      href: "https://didongviet.vn/apple-macbook-imac/macbook-air-m1-2020.html",
+      src: "https://cdn-v2.didongviet.vn/files/page/2023/7/15/0/1692080217166_frame_32.png",
+      alt: "Macbook Air M1",
     },
     {
-      href:"https://didongviet.vn/dien-thoai/samsung-galaxy-s23-ultra-5g-256gb.html",
-      src:"https://cdn-v2.didongviet.vn/files/page/2023/8/25/0/1695651188729_untitled_design.png",
-      alt:"Samsung Galaxy S23 Ultra"
+      href: "https://didongviet.vn/dien-thoai/samsung-galaxy-s23-ultra-5g-256gb.html",
+      src: "https://cdn-v2.didongviet.vn/files/page/2023/8/25/0/1695651188729_untitled_design.png",
+      alt: "Samsung Galaxy S23 Ultra",
     },
     {
-      href:"https://didongviet.vn/phu-kien/cu-sac-mophie-essential-pd-30w-1c.html",
-      src:"https://cdn-v2.didongviet.vn/files/page/2023/7/31/0/1693464688879_mophie.png",
-      alt:"Củ Sạc Mophie 30W"
+      href: "https://didongviet.vn/phu-kien/cu-sac-mophie-essential-pd-30w-1c.html",
+      src: "https://cdn-v2.didongviet.vn/files/page/2023/7/31/0/1693464688879_mophie.png",
+      alt: "Củ Sạc Mophie 30W",
     },
     {
-      href:"https://didongviet.vn/may-tinh-bang/ipad-gen-9-64gb-wifi.html",
-      src:"https://cdn-v2.didongviet.vn/files/page/2023/7/15/0/1692080182719_frame_25.png",
-      alt:"iPad Gen 9 2021"
+      href: "https://didongviet.vn/may-tinh-bang/ipad-gen-9-64gb-wifi.html",
+      src: "https://cdn-v2.didongviet.vn/files/page/2023/7/15/0/1692080182719_frame_25.png",
+      alt: "iPad Gen 9 2021",
     },
     {
-      href:"https://didongviet.vn/dien-thoai/iphone-15-pro-max.html",
-      src:"https://cdn-v2.didongviet.vn/files/page/2023/8/18/0/1695001713231_iphone_15_pro_max.png",
-      alt:"iPhone 15 Pro Max"
+      href: "https://didongviet.vn/dien-thoai/iphone-15-pro-max.html",
+      src: "https://cdn-v2.didongviet.vn/files/page/2023/8/18/0/1695001713231_iphone_15_pro_max.png",
+      alt: "iPhone 15 Pro Max",
     },
     {
-      href:"https://didongviet.vn/dien-thoai/samsung-galaxy-z-flip5-5g.html",
-      src:"https://cdn-v2.didongviet.vn/files/page/2023/7/15/0/1692080008025_frame_44.png",
-      alt:"Samsung Galaxy Z Flip5"
+      href: "https://didongviet.vn/dien-thoai/samsung-galaxy-z-flip5-5g.html",
+      src: "https://cdn-v2.didongviet.vn/files/page/2023/7/15/0/1692080008025_frame_44.png",
+      alt: "Samsung Galaxy Z Flip5",
     },
     {
-      href:"https://didongviet.vn/apple-macbook-imac/macbook-air-m1-2020.html",
-      src:"https://cdn-v2.didongviet.vn/files/page/2023/7/15/0/1692080217166_frame_32.png",
-      alt:"Macbook Air M1"
+      href: "https://didongviet.vn/apple-macbook-imac/macbook-air-m1-2020.html",
+      src: "https://cdn-v2.didongviet.vn/files/page/2023/7/15/0/1692080217166_frame_32.png",
+      alt: "Macbook Air M1",
     },
     {
-      href:"https://didongviet.vn/dien-thoai/samsung-galaxy-s23-ultra-5g-256gb.html",
-      src:"https://cdn-v2.didongviet.vn/files/page/2023/8/25/0/1695651188729_untitled_design.png",
-      alt:"Samsung Galaxy S23 Ultra"
+      href: "https://didongviet.vn/dien-thoai/samsung-galaxy-s23-ultra-5g-256gb.html",
+      src: "https://cdn-v2.didongviet.vn/files/page/2023/8/25/0/1695651188729_untitled_design.png",
+      alt: "Samsung Galaxy S23 Ultra",
     },
     {
-      href:"https://didongviet.vn/phu-kien/cu-sac-mophie-essential-pd-30w-1c.html",
-      src:"https://cdn-v2.didongviet.vn/files/page/2023/7/31/0/1693464688879_mophie.png",
-      alt:"Củ Sạc Mophie 30W"
+      href: "https://didongviet.vn/phu-kien/cu-sac-mophie-essential-pd-30w-1c.html",
+      src: "https://cdn-v2.didongviet.vn/files/page/2023/7/31/0/1693464688879_mophie.png",
+      alt: "Củ Sạc Mophie 30W",
     },
     {
-      href:"https://didongviet.vn/may-tinh-bang/ipad-gen-9-64gb-wifi.html",
-      src:"https://cdn-v2.didongviet.vn/files/page/2023/7/15/0/1692080182719_frame_25.png",
-      alt:"iPad Gen 9 2021"
-    }
+      href: "https://didongviet.vn/may-tinh-bang/ipad-gen-9-64gb-wifi.html",
+      src: "https://cdn-v2.didongviet.vn/files/page/2023/7/15/0/1692080182719_frame_25.png",
+      alt: "iPad Gen 9 2021",
+    },
   ];
-  
+
+  const listItemProduct = [];
   const handleMouseHover = (event) => {
     const { name } = event.currentTarget;
     setShowSubMenu(true);
@@ -130,14 +133,14 @@ export default function Home() {
     <>
       <main className="flex w-full flex-col justify-start items-center mx-auto">
         <div className="container w-full max-w-6xl">
-          <div className="grid grid-cols-12 min-h-[410px] mt-1 gap-2" onMouseLeave={() => setShowSubMenu(false)}>
-            <div
-              className="col-span-2 max-md:hidden bg-white rounded-lg"
-            >
+          <div
+            className="grid grid-cols-12 min-h-[410px] mt-1 gap-2"
+            onMouseLeave={() => setShowSubMenu(false)}
+          >
+            <div className="col-span-2 max-md:hidden bg-white rounded-lg">
               <div
                 name=""
                 className="rounded-lg bg-white p-1 flex flex-col justify-between min-h-[100px]"
-              
               >
                 <Link
                   href="/"
@@ -197,7 +200,12 @@ export default function Home() {
                     />
                   </div>
                 </Link>
-                <Link href="/" name="Laptop" onMouseOver={handleMouseHover} onMouseLeave={() => setShowSubMenu(false)}>
+                <Link
+                  href="/"
+                  name="Laptop"
+                  onMouseOver={handleMouseHover}
+                  onMouseLeave={() => setShowSubMenu(false)}
+                >
                   <div className="h-[26px] flex cursor-pointer items-center justify-between">
                     <div className="flex items-center">
                       <div>
@@ -226,7 +234,7 @@ export default function Home() {
             <div className="relative h-[410px] max-md:h-full max-md:w-full md:col-span-10">
               <div className="grid md:grid-cols-5">
                 <div className="w-full col-span-4 min-h-[410px] pr-[0.5rem]">
-                   <Slider></Slider>
+                  <Slider></Slider>
                 </div>
                 <div className="col-span-1 flex flex-col justify-between">
                   {listItemAds.length > 0 &&
@@ -246,20 +254,38 @@ export default function Home() {
             </div>
           </div>
           <div className="no-scrollbar my-2 w-full rounded-lg bg-white p-4 max-md:hidden max-md:overflow-x-scroll md:grid md:grid-cols-12 md:gap-4">
-            {
-              listItemHorizontal.length > 0 && 
-              listItemHorizontal.map((val,i)=>(
-                  <ItemHorizontal key={i} data={val} />
-              ))
-            }
+            {listItemHorizontal.length > 0 &&
+              listItemHorizontal.map((val, i) => (
+                <ItemHorizontal key={i} data={val} />
+              ))}
           </div>
           <div className="w-full rounded-lg overflow-hidden flex justify-between items-center relative">
             <SliderBody></SliderBody>
           </div>
           <div className="px-3 my-2 flex-col items-center justify-between rounded-lg bg-white  py-4 max-md:my-1 max-md:bg-bgddv max-md:py-2">
-            <h2 className="text-24  font-bold text-ddv ">
-              <a href="#">iPhone VN/A Chính Thống</a>
-            </h2>
+            <div className="flex justify-between max-md:hidden">
+              <h2 className="text-xl font-bold text-ddv">
+                <a href="/dien-thoai-iphone">iPhone VN/A Chính Thống</a>
+              </h2>
+              <div className="flex justify-between gap-4">
+                <a href="/iphone-15" title="iPhone 15 Series">
+                  <p className="border py-1 px-2 rounded-lg text-sm text-brown font-medium">iPhone 15 Series</p>
+                </a>
+                <a href="/iphone-15" title="iPhone 14 Series">
+                  <p className="border py-1 px-2 rounded-lg text-sm text-brown font-medium">iPhone 14 Series</p>
+                </a>
+                <a href="/iphone-15" title="iPhone 13 Series">
+                  <p className="border py-1 px-2 rounded-lg text-sm text-brown font-medium">iPhone 13 Series</p>
+                </a>
+                <a href="/dien-thoai-iphone" title="Xem tất cả">
+                  <p className="border py-1 px-2 rounded-lg text-sm text-brown font-medium">Xem tất cả</p>
+                </a>
+              </div>
+            </div>
+            <div className="mt-4 grid grid-cols-5 gap-4 md:grid-cols-2 max-md:gap-2">
+                <ItemProduct>                 
+                </ItemProduct>
+            </div>
           </div>
         </div>
       </main>
